@@ -1,0 +1,43 @@
+---
+name: {{SKILL_NAME}}
+description: 当在 {{PROJECT}} 里定位模块、做跨模块改动或需要全局约定时使用：提供模块路由表、全局命令与工程约定，并指向该加载的模块技能。
+---
+
+<!-- forge: module=* facts=none scanned={{DATE}} head={{HEAD}} -->
+
+# {{PROJECT}} 总览
+
+{{ONE_LINE_POSITIONING}}
+
+**技术栈**：{{STACK}}
+**顶层结构**：`{{TOP_LEVEL_DIRS}}`
+
+## 模块路由表
+
+| 任务 | 加载 | 说明 |
+|---|---|---|
+| {{TASK_1}} | `{{MODULE_SKILL_1}}` | {{NOTE_1}} |
+| {{TASK_2}} | `{{MODULE_SKILL_2}}` | {{NOTE_2}} |
+
+总览技能**不写实现细节**；进入具体模块后按上表加载对应技能。
+
+## 全局命令
+
+| 目的 | 命令 | 前置条件 |
+|---|---|---|
+| 安装 | `{{INSTALL_CMD}}` | {{INSTALL_PRE}} |
+| 构建 | `{{BUILD_CMD}}` | {{BUILD_PRE}} |
+| 全量测试 | `{{TEST_CMD}}` | {{TEST_PRE}} |
+| Lint | `{{LINT_CMD}}` | {{LINT_PRE}} |
+| 本地起服务 | `{{DEV_CMD}}` | {{DEV_PRE}} |
+
+## 何时读 references
+
+| 文件 | 何时读 |
+|---|---|
+| [module-map](references/module-map.md) | 需要模块表、依赖方向、跨模块任务路由时 |
+| [conventions](references/conventions.md) | 分支/提交/评审、发布回滚、环境与配置、术语时 |
+
+## 待确认
+
+- TODO(待确认)：{{OPEN_QUESTION}}

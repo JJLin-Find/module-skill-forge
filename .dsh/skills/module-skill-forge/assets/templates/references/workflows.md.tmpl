@@ -1,0 +1,31 @@
+# {{MODULE}} 操作流程
+
+> 读这个文件是为了：照步骤做完一次需求/修复，并确认验证到位。
+
+## 流程一：加需求
+
+**前置**：{{PREP}}
+
+1. 读 `{{PATH}}`，确认 {{CONTRACT_POINT}}
+2. 改 `{{PATH}}`：{{CHANGE}}
+3. 加测试 `{{TEST_PATH}}`：{{TEST_CASE}}
+4. 验证：`{{CMD}}`，预期 {{EXPECTED}}
+5. 自检：{{SELF_CHECK}}
+6. 提交前：{{PRECHECK}}
+
+## 流程二：修 bug
+
+**复现**：`{{REPRO_CMD}}` / {{MANUAL_STEP}}
+
+1. 定位：按 [pitfalls](pitfalls.md) 的「{{SYMPTOM}}」排查
+2. 读 `{{PATH}}` 确认根因，写下「为什么现在才发现」
+3. 最小修复 `{{PATH}}`；同时检查 {{SIBLING_CASE}}
+4. 回归：`{{TEST_CMD}}` + {{MANUAL_REGRESSION}}
+5. 记录：是否需要补 `pitfalls.md`
+
+## 流程三：答疑
+
+1. 结构问题 → [architecture](architecture.md)
+2. 改哪里 → [file-map](file-map.md)
+3. 命令/环境 → [verification](verification.md)
+4. 仍不清楚 → 指出具体缺口，标 `TODO(待确认)`，不要猜

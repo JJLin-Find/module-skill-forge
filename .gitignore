@@ -1,0 +1,9 @@
+# 生成的事实包与缓存，不随仓库提交
+.dsh/forge/
+
+# Python 缓存
+__pycache__/
+*.pyc
+
+# macOS
+.DS_Store

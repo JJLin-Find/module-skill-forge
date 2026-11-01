@@ -1,0 +1,13 @@
+{
+  "extends": "./tsconfig.base.json",
+  "compilerOptions": {
+    "module": "ESNext",
+    "moduleResolution": "Bundler",
+    "baseUrl": ".",
+    "paths": {
+      "@sample/catalog": ["packages/catalog/src/index.ts"]
+    },
+    "noEmit": true
+  },
+  "include": ["packages/*/src/**/*.ts", "packages/*/tests/**/*.ts"]
+}

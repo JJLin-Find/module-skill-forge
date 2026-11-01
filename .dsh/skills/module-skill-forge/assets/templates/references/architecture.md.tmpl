@@ -1,0 +1,43 @@
+# {{MODULE}} 架构
+
+> 读这个文件是为了：判断一次改动的真实影响面，而不是只知道文件在哪。
+
+## 职责与边界
+
+- 负责：{{RESPONSIBILITY}}
+- 不负责：{{NOT_RESPONSIBLE}}
+- 边界变得模糊的地方：{{FUZZY_BOUNDARY}}
+
+## 入口
+
+| 入口 | 类型 | 路径 | 说明 |
+|---|---|---|---|
+| {{ENTRY_NAME}} | HTTP/CLI/任务/库导出 | `{{ENTRY_PATH}}` | {{ENTRY_NOTE}} |
+
+## 调用链
+
+```
+{{CALL_CHAIN_ASCII}}
+```
+
+## 数据与状态
+
+- 数据来源：{{DATA_SOURCE}}
+- 写入方：{{WRITER}}
+- 状态机：{{STATE_MACHINE}}
+- 不变量：{{INVARIANTS}}
+
+## 关键决策与历史包袱
+
+- {{DECISION}}：{{RATIONALE}}（证据：`{{EVIDENCE}}`）
+
+## 外部依赖
+
+| 依赖 | 用途 | 失败表现 | 超时/重试 |
+|---|---|---|---|
+| {{DEP}} | {{PURPOSE}} | {{FAILURE_MODE}} | {{RETRY}} |
+
+## 影响面提示
+
+- 改公开 API 会影响：{{CONSUMERS}}
+- 改数据格式会影响：{{FORMAT_CONSUMERS}}

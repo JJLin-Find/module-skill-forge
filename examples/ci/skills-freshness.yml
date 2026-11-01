@@ -1,0 +1,30 @@
+# 技能新鲜度检查：技能是否跟得上代码变更（GitHub Actions 样例，复制到 .github/workflows/ 使用）
+name: skills-freshness
+
+on:
+  pull_request:
+  schedule:
+    # 每周一 01:00 UTC = 09:00 CST
+    - cron: '0 1 * * 1'
+  workflow_dispatch:
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          # 必须完整历史，refresh.py 要用 git rev-list <head>..HEAD 判断模块是否变更
+          fetch-depth: 0
+
+      # exit 1 = 有模块技能过期（代码变了但技能没更新）
+      - name: 技能过期检测
+        run: python3 .dsh/skills/module-skill-forge/scripts/refresh.py --project . --mode check
+
+      # 契约与质量门禁
+      - name: 技能契约校验
+        run: python3 .dsh/skills/module-skill-forge/scripts/validate_skills.py --root .dsh/skills --strict
+
+      # 脚本自身回归
+      - name: 脚本单测
+        run: python3 -m unittest discover -s tests -v

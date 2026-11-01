@@ -1,0 +1,32 @@
+# {{MODULE}} 验证手册
+
+> 读这个文件是为了：用真实存在的命令验证改动，避免跑一个不存在的脚本。
+
+## 环境前置
+
+- 依赖安装：`{{INSTALL_CMD}}`
+- 必需环境变量：{{ENV_VARS}}
+- 需要启动的服务：{{SERVICES}}
+
+## 命令
+
+| 目的 | 命令 | 预期输出 | 来源 |
+|---|---|---|---|
+| 本模块单测 | `{{TEST_CMD}}` | {{EXPECTED}} | `{{EVIDENCE}}` |
+| 单个用例 | `{{FILTER_CMD}}` | {{EXPECTED}} | 派生自 `{{BASE_CMD}}` |
+| 构建 | `{{BUILD_CMD}}` | {{EXPECTED}} | `{{EVIDENCE}}` |
+| Lint | `{{LINT_CMD}}` | {{EXPECTED}} | `{{EVIDENCE}}` |
+
+## 手动验证
+
+| 场景 | 步骤 | 通过标准 |
+|---|---|---|
+| {{SCENARIO}} | {{STEPS}} | {{PASS_CRITERIA}} |
+
+## 覆盖盲区
+
+- {{COVERAGE_GAP}}：为什么自动测试覆盖不到，怎么人工确认。
+
+## 事实基线
+
+{{DATE}}，{{HEAD}}

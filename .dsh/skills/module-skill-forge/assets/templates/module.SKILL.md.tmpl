@@ -1,0 +1,70 @@
+---
+name: {{SKILL_NAME}}
+description: 当{{USER_TASK}}时使用：{{VALUE_PROMISE}}{{OPTIONAL_BOUNDARY}}
+---
+
+<!-- forge: module={{MODULE_PATH}} facts=.dsh/forge/{{MODULE_SLUG}}/facts.json scanned={{DATE}} head={{HEAD}} -->
+
+# {{MODULE_TITLE}}
+
+**职责**：{{ONE_LINE_DUTY}}
+**不负责**：{{NOT_RESPONSIBLE}}（交给 `{{SIBLING_SKILL}}` 或人工确认）
+**最大风险**：{{TOP_RISK_WITH_PATH}}
+
+## 先做什么
+
+### 加需求
+
+1. 读 `{{ENTRY_OR_CONTRACT_PATH}}` —— {{WHY_READ_FIRST}}
+2. 在 `{{CHANGE_PATH}}` 落地改动：{{CHANGE_POINT}}
+3. 补/改用例 `{{TEST_PATH}}`，覆盖 {{COVERAGE_POINT}}
+4. 跑 `{{TEST_CMD}}`，预期 {{EXPECTED_RESULT}}
+5. 自检：{{SELF_CHECK_ITEM}}
+
+### 修 bug
+
+1. 复现：`{{REPRO_CMD}}`（或手动：{{MANUAL_REPRO}}）
+2. 先看 `{{SUSPECT_PATH}}`，对照 [pitfalls](references/pitfalls.md) 的「{{SYMPTOM}}」
+3. 最小修复于 `{{FIX_PATH}}`；如需改契约，先读 [architecture](references/architecture.md) 的影响面
+4. 跑 `{{TEST_CMD}}` 与 `{{REGRESSION_CMD}}`
+5. 确认 {{REGRESSION_CHECK}}
+
+### 答疑
+
+1. 结构性问题读 [architecture](references/architecture.md)
+2. 「改哪里」查 [file-map](references/file-map.md)
+3. 命令/环境查 [verification](references/verification.md)
+4. 术语与跨模块约定查 `{{OVERVIEW_SKILL}}`
+
+## 何时读 references
+
+| 文件 | 何时读 |
+|---|---|
+| [architecture](references/architecture.md) | 要判断影响面、改公开 API、理解状态流转时 |
+| [file-map](references/file-map.md) | 知道要改什么、但不知道改哪个文件时 |
+| [workflows](references/workflows.md) | 需要完整步骤与验证清单时 |
+| [pitfalls](references/pitfalls.md) | 现象异常、怀疑踩坑时 |
+| [verification](references/verification.md) | 需要跑命令、准备环境、确认预期输出时 |
+| [business-spec](references/business-spec.md) | 被问「这条需求当时怎么定的 / 这个字段什么口径 / 为什么这么做」时（knowledge 取向才有） |
+| [faq](references/faq.md) | 新人第一次接触本模块、或问题很像「常见疑问」时（knowledge 取向才有） |
+
+## 业务规格与新人答疑
+
+- 业务怎么定的、口径是什么、哪些不能动 → 读 [business-spec](references/business-spec.md)
+- 新人最常问什么、先看哪里 → 读 [faq](references/faq.md)
+- 回答完一个通用问题，顺手回写 `faq.md` 一条（问题用新人原话 + 代码位置）
+
+## 关键事实
+
+- 入口：{{ENTRIES}}
+- 命令：`{{PRIMARY_COMMAND}}`
+- 环境变量：{{ENV_VARS}}
+- 上游/下游：{{DEPENDENCIES}}
+
+## 待确认
+
+- TODO(待确认)：{{OPEN_QUESTION}}
+
+## 事实基线
+
+{{DATE}}，{{HEAD}}

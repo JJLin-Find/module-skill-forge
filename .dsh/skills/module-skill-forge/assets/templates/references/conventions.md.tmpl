@@ -1,0 +1,40 @@
+# {{PROJECT}} 工程约定
+
+> 读这个文件是为了：按团队现有方式提交、评审、发布，不引入额外流程。
+
+## 分支与提交
+
+- 分支：{{BRANCH_RULE}}
+- 提交信息：{{COMMIT_RULE}}
+- 必备检查：{{PRECHECK_CMD}}
+
+## 评审
+
+- 谁评审：{{REVIEWERS}}
+- 评审关注点：{{REVIEW_FOCUS}}
+- 必须同步的文档/配置：{{SYNC_ITEMS}}
+
+## 发布与回滚
+
+- 发布流程：{{RELEASE_FLOW}}
+- 灰度/开关：{{ROLLOUT}}
+- 回滚方式：{{ROLLBACK}}
+- 数据库迁移：{{MIGRATION_RULE}}
+
+## 环境与配置
+
+| 变量/配置 | 作用 | 默认值 | 证据 |
+|---|---|---|---|
+| `{{ENV_VAR}}` | {{ENV_DESC}} | {{ENV_DEFAULT}} | `{{ENV_EVIDENCE}}` |
+
+## 代码与测试要求
+
+- 风格：{{STYLE_RULE}}
+- 测试要求：{{TEST_RULE}}
+- 不允许的做法：{{ANTI_PATTERN}}
+
+## 术语表
+
+| 术语 | 含义 | 代码中的对应 |
+|---|---|---|
+| {{TERM}} | {{MEANING}} | `{{CODE_SYMBOL}}` |
